@@ -37,8 +37,10 @@ body{
 .newSong.active{
     background: #d4d4d4;
 }
-.songList{
+#songList-container{
     flex-grow: 1;
+}
+.songList{
     text-align: left;
     border-top: 1px solid #999;
 }
@@ -69,7 +71,7 @@ body{
 
 /* main */
 .page > main{
-    background: #ddd;
+    background: #d4d4d4;
 }
 .form{
     font-size: 14px;
