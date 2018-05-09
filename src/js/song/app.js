@@ -25,7 +25,7 @@
             }
             this.$el.find('.song-description>h1').text(song.name)
             let {lyrics} = song
-            lyrics.split('\n').map((string)=>{      //sdsdsdsdwdsdsdwdsds
+            lyrics.split('\n').map((string)=>{      
                 let p = document.createElement('p')
                 let regex = /\[([\d:.]+)\](.+)/
                 let matches = string.match(regex)
@@ -49,7 +49,7 @@
             let p
             for(let i=0;i<allP.length;i++){
                 if(i === allP.length-1){
-                    p = (allP[i])
+                    p = allP[i]
                     break
                 }else{
                     let currentTime = allP.eq(i).attr('data-time')
@@ -57,7 +57,6 @@
                     if(currentTime <= time && time < nextTime ){
                         p = allP[i]
                         break
-                        
                     }
                 }
             }
@@ -101,7 +100,6 @@
             this.model = model
             let id = this.getSongId()
             this.model.get(id).then(()=>{
-                // console.log('lyrics',this.model.data.song.lyrics)
                 this.view.render(this.model.data)
             })
             this.bindEvents()
@@ -109,7 +107,7 @@
         bindEvents(){
             $(this.view.el).on('click','.icon-play',()=>{
                 this.model.data.status = 'playing'
-                this.view.render(this.model.data)    //youwentisdsdsssssssss
+                this.view.render(this.model.data)    
                 this.view.play()
             })
             $(this.view.el).on('click','.icon-pause',()=>{
